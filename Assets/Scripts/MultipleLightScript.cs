@@ -44,9 +44,11 @@ public class MultipleLightScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                
                 press = !press;
                 switchAnimator.ResetTrigger("press");
                 switchAnimator.SetTrigger("press");
+                lightSwSound.Play();
             }
         }
 
