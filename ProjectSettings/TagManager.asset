@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Trigger
   - FoodL1
+  - RemoveEventL1
+  - CollidingPlayer1
   layers:
   - Default
   - TransparentFX
