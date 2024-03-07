@@ -11,6 +11,7 @@ public class GetThingsScript : MonoBehaviour
     public bool isInteractable;
 
 
+
     void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("MainCamera"))

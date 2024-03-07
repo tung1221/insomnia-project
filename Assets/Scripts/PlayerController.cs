@@ -19,6 +19,11 @@ public class PlayerController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0f;
 
+    [SerializeField] private AudioSource walkingSource;
+    [SerializeField] private AudioSource runningSource;
+
+
+
     [HideInInspector]
     bool canMove = true;
     // Start is called before the first frame update
@@ -43,13 +48,43 @@ public class PlayerController : MonoBehaviour
         float mvmDirectionY = moveDirection.y;
         moveDirection = (fw * curX) + (right * curY);
 
+        if ((curX != 0 || curY != 0) && characterController.isGrounded)
+        {
+            if (isRun)
+            {
+                if (!runningSource.isPlaying)
+                {
+                    runningSource.Play();
+                }
+
+                walkingSource.Stop();
+            }
+            else
+            {
+                if (!walkingSource.isPlaying)
+                {
+                    walkingSource.Play();
+                }
+
+                runningSource.Stop();
+            }
+        }
+        else
+        {
+            walkingSource.Stop();
+            runningSource.Stop();
+        }
+
+
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
             moveDirection.y = jumpSpeed;
         }
         else
         {
+
             moveDirection.y = mvmDirectionY;
+
         }
 
         if (!characterController.isGrounded)
