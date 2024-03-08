@@ -41,7 +41,6 @@ public class GetThingsScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                
                 isInteractable = false;
                 electricLightInHand.SetActive(true);
                 electricLightSource.SetActive(false);

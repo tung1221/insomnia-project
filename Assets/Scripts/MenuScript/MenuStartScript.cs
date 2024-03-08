@@ -7,22 +7,15 @@ public class MenuStartScript : MonoBehaviour
 {
     public GameObject loadingScreen;
     public string sceneName;
-    public AudioSource menuSound;
-
-    public void Start()
-    {
-        menuSound.enabled = true;
-    }
+    
     public void PlayGame()
     {
         loadingScreen.SetActive(true);
         SceneManager.LoadScene(sceneName);
-        menuSound.enabled = false;
     }
 
     public void QuitGame()
     {
-        menuSound.enabled=false;
         Application.Quit();
     }
     // Start is called before the first frame update
