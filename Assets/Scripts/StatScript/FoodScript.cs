@@ -7,6 +7,7 @@ using UnityEngine;
 public class FoodScript : MonoBehaviour
 {
     public GameObject txtGrab;
+    public GameObject ghostTraceTriggered;
     private int foodCount;
     public GameObject darknessText;
     private readonly int MAXIMUM_FOOD = 4;
@@ -73,6 +74,7 @@ public class FoodScript : MonoBehaviour
                 {
                     // darknessText.SetActive(true);
                     EventScareLv1.SetActive(true);
+                    ghostTraceTriggered.SetActive(true);
                     isFirstTime = false;
                 }
                 isInteractable = false;

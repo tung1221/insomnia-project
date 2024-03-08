@@ -8,10 +8,18 @@ public class MenuStartScript : MonoBehaviour
     public GameObject loadingScreen;
     public string sceneName;
     
+
+
     public void PlayGame()
     {
-        loadingScreen.SetActive(true);
+        StartCoroutine(LoadLoadingScreen());
         SceneManager.LoadScene(sceneName);
+    }
+
+    IEnumerator LoadLoadingScreen()
+    {
+        loadingScreen.SetActive(true);
+        yield return new WaitForSeconds(3f);
     }
 
     public void QuitGame()

@@ -8,6 +8,7 @@ TagManager:
   - FoodL1
   - RemoveEventL1
   - CollidingPlayer1
+  - CutScene
   layers:
   - Default
   - TransparentFX
