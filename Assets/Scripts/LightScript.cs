@@ -37,9 +37,8 @@ public class LightScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
 
+    }
     // Update is called once per frame
     void Update()
     {
@@ -50,6 +49,7 @@ public class LightScript : MonoBehaviour
                 press = !press;
                 switchAnimator.ResetTrigger("press");
                 switchAnimator.SetTrigger("press");
+                lightSwSound.Play();
             }
         }
 
@@ -57,11 +57,13 @@ public class LightScript : MonoBehaviour
         {
             light2.SetActive(false);
             lightBulb.material = offLight;
+            
         }
         if (press == true)
         {
             light2.SetActive(true);
             lightBulb.material = onLight;
+            
         }
     }
 }
