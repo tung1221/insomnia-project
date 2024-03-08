@@ -20,7 +20,6 @@ public class TurnOnOffLight : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            sound.Play();
             press = !press;
 
         }
